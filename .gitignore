@@ -1,5 +1,6 @@
 #Secure Keys and what not
 key.sh
+connect.sh
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
