@@ -1,0 +1,18 @@
+
+
+[characters]
+
+[characters.narrator]
+voice = "Brian"
+
+[characters.mss]
+voice = "Joey"
+
+[characters.wife]
+voice = "Joanna"
+
+[characters.son]
+voice = "Kevin"
+
+[characters.unknown]
+voice = "Justin"

@@ -1,6 +1,9 @@
 #Secure Keys and what not
 key.sh
 connect.sh
+*.wav
+*.mp3
+wav
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -1,3 +1,2 @@
 openai
-TTS
-torch
+toml
