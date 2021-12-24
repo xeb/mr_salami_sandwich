@@ -1,5 +1,0 @@
-[narrator]: "I am the narrator"
-[mss]: "I am Mr. Salami Sandwich"
-[wife]: "I am the wife"
-[son]: "I am the son"
-[bafldkfd+fadsfd]: "I am someone... unknown"

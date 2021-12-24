@@ -1,16 +1,16 @@
 import os
+import toml
 import openai
 import argparse
 
-temperature=0.73
-top_p=1
-
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
+settings = toml.load("settings.toml")["settings"]
+print(f"Using settings {settings}")
 
 parser = argparse.ArgumentParser(description="Generate a Mr. Salami Sandwich Story")
 parser.add_argument('--input_path', '-i', required=True)
 parser.add_argument('--output_path', '-o', required=True)
-parser.add_argument('--max_tokens', '-mt', required=True, type=int)
 args = parser.parse_args()
 
 prompt = ""
@@ -22,21 +22,17 @@ print(f"Using prompt {prompt}")
 response = openai.Completion.create(
   engine="davinci",
   prompt=prompt,
-  temperature=temperature,
-  max_tokens=args.max_tokens,
-  top_p=top_p,
-  frequency_penalty=0.3,
-  presence_penalty=0.7,
-  #stop=["\n"]
+  temperature=settings["temperature"],
+  max_tokens=settings["max_tokens"],
+  frequency_penalty=settings["frequency_penalty"],
+  presence_penalty=settings["presence_penalty"],
 )
 
-print(response)
-
 text = response["choices"][0]["text"]
+print(text)
 
 with open(args.output_path,"w") as f:
     f.write(prompt)
-    f.write("---\n")
     f.write(text)
 
-print(f"Saved to {args.output_path}")
+print(f"----\nSaved to {args.output_path}")

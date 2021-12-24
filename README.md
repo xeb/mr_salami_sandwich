@@ -9,5 +9,5 @@ virtualenv --python=python3.8 venv
 . venv/bin/activate
 pip install -r requirements.txt
 echo "export OPENAI_API_KEY=\"{YOUR_OPENAI_API_KEY}\"" > key.sh
-/gen.sh
+make
 ```

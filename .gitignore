@@ -4,6 +4,10 @@ connect.sh
 *.wav
 *.mp3
 wav
+stories/
+tmp
+output.txt
+dialogs.toml
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
