@@ -1,9 +1,8 @@
 
 [settings]
-max_tokens = 1000
-temperature = 0.7
-presence_penalty = 0.3
-frequency_penalty = 0.3
+temperature = 0.60
+presence_penalty = 0.4
+frequency_penalty = 0.2
 
 [characters]
 

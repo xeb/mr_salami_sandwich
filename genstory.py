@@ -11,11 +11,15 @@ print(f"Using settings {settings}")
 parser = argparse.ArgumentParser(description="Generate a Mr. Salami Sandwich Story")
 parser.add_argument('--input_path', '-i', required=True)
 parser.add_argument('--output_path', '-o', required=True)
+parser.add_argument('--location', '-l', required=False)
 args = parser.parse_args()
 
 prompt = ""
 with open(args.input_path,"r") as f:
     prompt = f.read()
+
+if args.location is not None:
+  prompt = prompt.replace("{LOCATION}", args.location)
 
 print(f"Using prompt {prompt}")
 
@@ -23,7 +27,7 @@ response = openai.Completion.create(
   engine="davinci",
   prompt=prompt,
   temperature=settings["temperature"],
-  max_tokens=settings["max_tokens"],
+  max_tokens=(2048 - len(prompt)),
   frequency_penalty=settings["frequency_penalty"],
   presence_penalty=settings["presence_penalty"],
 )

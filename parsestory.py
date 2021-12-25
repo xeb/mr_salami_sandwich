@@ -14,7 +14,8 @@ with open(args.input_path,"r") as f:
 
 characters = toml.load("settings.toml")["characters"]
 
-p = r'\[(.*)\].*"(.*)".*'
+p = r'\[(.*)\].*"(.*)".*' # expected dialog
+p2 = r'\[(.*)\](.*)' # backup
 
 i = 0
 
@@ -24,16 +25,30 @@ for l in s.split('\n'):
     i = i + 1
     print("---")
     print(f"Parsing line {l}")
+    
+    voice = characters["unknown"]["voice"] # use unknown for standard looking dialogs
+    dialog = None
+
     s = re.search(p, l)
     if s is None:
+        print("BACKUP DIALOG")
+        s = re.search(p2, l)
+        voice = characters["narrator"]["voice"] # use narrator as backup for weird lines
+
+        if len(l) > 10:
+            dialog = l # just make the whole line a narration
+
+    # Parse standard
+    if s is not None:
+        speaker = s.group(1)
+        if speaker in characters.keys():
+            voice = characters[speaker]["voice"]
+
+        dialog = s.group(2)
+
+    if dialog is None or len(dialog.strip()) == 0:
         continue
 
-    voice = characters["unknown"]["voice"]
-    speaker = s.group(1)
-    if speaker in characters.keys():
-        voice = characters[speaker]["voice"]
-
-    dialog = s.group(2)
     ofile=f"out{i:03}"
 
     d = {
