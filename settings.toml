@@ -1,0 +1,25 @@
+# Global Settings
+
+temperature = 0.690
+max_tokens = 300
+top_p = 1
+:x
+presence_penalty = 0.2 # new content
+
+input_path = "prompt.txt"
+output_path = "story.txt"
+
+[characters]
+
+[characters.mss]
+name = "Mr. Salami Sandwich"
+key = "mss"
+tts_speaker = "p239"
+tts_engine = "coqui"
+
+[characters.narrator]
+name = "Narrator"
+key = "narrator"
+tts_speaker = "p234"
+tts_engine = "coqui"
+

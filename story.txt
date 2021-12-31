@@ -8,3 +8,13 @@
 [mss]: "Yes, I am! Nice to meet you!"
 [narrator]: "The Ticket Sales Person was afraid because she had never seen a talking sandwich before. But she knew this sandwich was a boy. Well, not a boy, but a Mister. She decided to be polite and call him Mr. Sandwich. Because she did mot know what kind of meat he had on the inside."
 [tkt]: "Same, Mr. Sandwich. So one ticket to the top of the Space Needle?"
+[mss]: "Yes, one ticket please."
+[narrator]: "Said Mr. Salami Sandwich. The Ticket Sales Person punched the ticket into her computer and gave it to him."
+[tkt]: "Here you go, sir."
+[narrator]: "Said the woman. Then she leaned in close to Mr. Salami Sandwich and whispered into his ear."
+[tkt+whisper]: "Just so you know, I'm vegetarian."
+[mss]: "Thank you for telling me that!"
+[narrator]: "Said Mr. Salami Sandwich as he left with his ticket in hand. He walked up to the Space Needle because it was only a short walk away from their house at Pike's Place Market. When he arrived there, a robot greeted him."
+[robot]: "Hello sir! Welcome to Space Needle! How may I help your sandwich ass?"
+[mss]: "I need to board the elevator that takes people up to the top of this building."
+[robot+annoyed sighing sound], robot: "...alright" [blinks] [to self] [sighing sound]...dear god..." [buzzing sounds as robot moves arms around] ...and then it is time for you to go on an adventure! A...a...adventure!" ["ding!" sound as elevator doors open] [doors close]"  
