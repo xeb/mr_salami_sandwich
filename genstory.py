@@ -23,20 +23,34 @@ if args.location is not None:
 
 print(f"Using prompt {prompt}")
 
-response = openai.Completion.create(
-  engine="davinci",
-  prompt=prompt,
-  temperature=settings["temperature"],
-  max_tokens=(2048 - len(prompt)),
-  frequency_penalty=settings["frequency_penalty"],
-  presence_penalty=settings["presence_penalty"],
-)
+def complete(prompt):
+    response = openai.Completion.create(
+      engine="davinci",
+      prompt=prompt,
+      temperature=settings["temperature"],
+      max_tokens=(2048 - len(prompt)),
+      frequency_penalty=settings["frequency_penalty"],
+      presence_penalty=settings["presence_penalty"],
+    )
 
-text = response["choices"][0]["text"]
+    text = response["choices"][0]["text"]
+    return text
+
+text = complete(prompt)
 print(text)
 
-with open(args.output_path,"w") as f:
-    f.write(prompt)
-    f.write(text)
+story = prompt.strip() + "\n" + text.strip()
+
+if settings["reruns"] > 0:
+    for rr in range(0, settings["reruns"]):
+        nprompt = '\n'.join(story.split('\n')[-settings["rerun_lines"]:])
+        print(f"Using new prompt of \n{nprompt}")
+        noutput = complete(nprompt)
+
+        print(f"Received \n{noutput}")
+        story = story + noutput
+
+with open(args.output_path, "w") as f:
+    f.write(story)
 
 print(f"----\nSaved to {args.output_path}")

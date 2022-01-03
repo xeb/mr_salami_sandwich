@@ -1,8 +1,10 @@
 
 [settings]
-temperature = 0.60
-presence_penalty = 0.4
-frequency_penalty = 0.2
+temperature = 0.6
+presence_penalty = 0.3
+frequency_penalty = 0.1
+reruns = 1
+rerun_lines = 7
 
 [characters]
 
@@ -10,16 +12,17 @@ frequency_penalty = 0.2
 voice = "Brian"
 
 [characters.mss]
-voice = "Matthew"
+voice = "Geraint"
+ssml = "<speak><prosody amazon:max-duration=\"60s\" pitch=\"+2000%\" rate=\"x-fast\">{TEXT}</prosody></speak>"
 
 [characters.wife]
 voice = "Joanna"
 
 [characters.woman]
-voice = "Joanna"
+voice = "Ayanda"
 
 [characters.son]
 voice = "Justin"
 
 [characters.unknown]
-voice = "Joey"
+voice = "Russell"

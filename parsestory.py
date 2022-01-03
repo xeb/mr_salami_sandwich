@@ -31,9 +31,15 @@ for l in s.split('\n'):
 
     s = re.search(p, l)
     if s is None:
+        
         print("BACKUP DIALOG")
         s = re.search(p2, l)
         voice = characters["narrator"]["voice"] # use narrator as backup for weird lines
+
+        # Magic strings
+        if l.strip() == "<|endoftext|>":
+            print(f"Skipping because")
+            continue
 
         if len(l) > 10:
             dialog = l # just make the whole line a narration
