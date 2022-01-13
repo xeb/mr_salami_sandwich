@@ -1,5 +1,16 @@
 #Secure Keys and what not
 key.sh
+connect.sh
+*.wav
+*.mp3
+wav
+stories/
+tmp
+output.txt
+dialogs.toml
+
+# Misc
+.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

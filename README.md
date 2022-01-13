@@ -5,9 +5,8 @@ The great adventures of Mr. Salami Sandwich. Insane fun via story generation wit
 This is all a big hack right now... nothing to see yet. To get started, do something like this:
 
 ```
-virtualenv --python=python3.8 venv
-. venv/bin/activate
-pip install -r requirements.txt
+./setup.sh
 echo "export OPENAI_API_KEY=\"{YOUR_OPENAI_API_KEY}\"" > key.sh
-/gen.sh
+source key.sh
+make
 ```

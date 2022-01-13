@@ -1,0 +1,30 @@
+
+[settings]
+temperature = 0.54
+presence_penalty = 0.4
+frequency_penalty = 0.4
+reruns = 1
+rerun_lines = 7
+
+input = "Ninja"
+
+[characters]
+
+[characters.narrator]
+voice = "Brian"
+
+[characters.mss]
+voice = "Geraint"
+ssml = "<speak><prosody amazon:max-duration=\"60s\" pitch=\"+2000%\" rate=\"x-fast\">{TEXT}</prosody></speak>"
+
+[characters.wife]
+voice = "Joanna"
+
+[characters.woman]
+voice = "Ayanda"
+
+[characters.son]
+voice = "Justin"
+
+[characters.unknown]
+voice = "Russell"
