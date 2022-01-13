@@ -11,15 +11,14 @@ print(f"Using settings {settings}")
 parser = argparse.ArgumentParser(description="Generate a Mr. Salami Sandwich Story")
 parser.add_argument('--input_path', '-i', required=True)
 parser.add_argument('--output_path', '-o', required=True)
-parser.add_argument('--location', '-l', required=False)
 args = parser.parse_args()
 
 prompt = ""
 with open(args.input_path,"r") as f:
     prompt = f.read()
 
-if args.location is not None:
-  prompt = prompt.replace("{LOCATION}", args.location)
+if settings["input"] is not None:
+  prompt = prompt.replace("{INPUT}", settings["input"])
 
 print(f"Using prompt {prompt}")
 
