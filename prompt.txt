@@ -1,4 +1,0 @@
-[narrator]: "Once upon a time, there once was a sandwich named Mr. Salami Sandwich. He was made from two pieces of sourdough bread and had salami in the middle of his body."
-[mss]: "I am so excited to get a job as {INPUT}!"
-[tkt]: "Hello Mr. Sandwich. Are you here for your first day as {INPUT}?"
-[mss]: "Yes. What should I do on my first day?"

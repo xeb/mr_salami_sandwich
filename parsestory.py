@@ -1,6 +1,7 @@
 import re, os
 import toml
 import argparse
+import random
 import subprocess as sp
 
 parser = argparse.ArgumentParser(description="Parse a story to create dialog objects")
@@ -12,21 +13,34 @@ s = ""
 with open(args.input_path,"r") as f:
     s = f.read()
 
+s = s.replace("[", "\n[")
+s = s.replace(":", "")
+s = s.replace("xa0", "")
+s = s.replace("\xa0", "")
+
 characters = toml.load("settings.toml")["characters"]
 
+def get_voice(speaker):
+    if speaker in characters.keys():
+        voice = characters[speaker]["voice"]
+
+        
 p = r'\[(.*)\].*"(.*)".*' # expected dialog
 p2 = r'\[(.*)\](.*)' # backup
 
 i = 0
 
 dialogs = []
+sm = {}
 
 for l in s.split('\n'):
+    l = l.strip()
     i = i + 1
     print("---")
     print(f"Parsing line {l}")
     
     voice = characters["unknown"]["voice"] # use unknown for standard looking dialogs
+    voice = None
     dialog = None
 
     s = re.search(p, l)
@@ -46,9 +60,28 @@ for l in s.split('\n'):
 
     # Parse standard
     if s is not None:
-        speaker = s.group(1)
+        speaker = s.group(1).replace(" ", "").strip()
         if speaker in characters.keys():
             voice = characters[speaker]["voice"]
+            sm[speaker] = voice
+        elif speaker in sm.keys():
+            voice = sm[speaker]
+            print(f"Reusing voice {voice} for {speaker}")
+        else:
+            print(f"No voice, picking random")
+
+            acs = list(characters.keys())
+            random.shuffle(acs)
+
+            for c in acs:
+                print(f"Looking for rando, checking out {c}")
+                if c not in sm.keys():
+                    voice = characters[c]["voice"]
+                    sm[speaker] = voice
+                    print(f"Picking rando character of {voice} for {speaker}!")
+                    break
+                else:
+                    print(f"Skipping {c} because they are in {sm.keys()}")
 
         dialog = s.group(2)
 
@@ -56,6 +89,10 @@ for l in s.split('\n'):
         continue
 
     ofile=f"out{i:03}"
+
+    if voice is None:
+        print(f"OMFG, what?")
+        sys.exit(1)
 
     d = {
         "voice": voice,
