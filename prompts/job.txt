@@ -1,0 +1,7 @@
+[narrator]: "Once upon a time, there once was a sandwich named Mr. Salami Sandwich. He was made from two pieces of sourdough bread and had salami in the middle of his body."
+[mss]: "Today, I start my first job as {INPUT}."
+[narrator]: "He went to work and found his new boss."
+[mss]: "Hi there! I am ready to start my job as {INPUT}."
+[female2]: "Welcome! Great. Let me introduce you to someone who can help."
+[female1]: "Hi there, Mr. Salami Sandwich."
+[mss]: "Hello. What's your name?"

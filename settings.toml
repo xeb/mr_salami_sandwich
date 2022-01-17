@@ -4,12 +4,42 @@ temperature = 0.6
 presence_penalty = 0.4
 frequency_penalty = 0.7
 reruns = 3
-rerun_lines = 8
+rerun_lines = 7
 max_retries = 2
 max_tokens = 2048
 
-#input = "a Movie Theater Ticket Sales Person"
-input = "rob a bank"
+input = "play basketball in the NBA"
+output = "basketball"
+
+prompts_path = "prompts"
+
+# ------------------------------------------------
+
+[runs]
+
+[runs.1]
+
+input = "play soccer"
+prompt = "activity"
+output = "soccer1.mp3"
+
+[runs.2]
+
+input = "play football"
+prompt = "activity"
+output = "football1.mp3"
+
+[runs.3]
+input = "Big Bear Lake"
+prompt = "location"
+output = "bigbear.mp3"
+
+[runs.4]
+input = "Programmer"
+prompt = "job"
+output = "programmer.mp3"
+
+# -------------------------------------------------
 
 [characters]
 
@@ -21,13 +51,18 @@ voice = "Geraint"
 ssml = "<speak><prosody amazon:max-duration=\"60s\" pitch=\"+2000%\" rate=\"x-fast\">{TEXT}</prosody></speak>"
 
 [characters.male1]
-voice = "Justin"
+voice = "Matthew"
+ssml = "<speak><prosody amazon:max-duration=\"60s\" pitch=\"+2000%\" rate=\"x-fast\">{TEXT}</prosody></speak>"
 
 [characters.male2]
 voice = "Russell"
 
 [characters.male3]
 voice = "Matthew"
+
+[characters.male4]
+voice = "Geraint"
+ssml = "<speak><prosody amazon:max-duration=\"60s\" pitch=\"-2000%\" rate=\"slow\">{TEXT}</prosody></speak>"
 
 [characters.wife]
 voice = "Joanna"

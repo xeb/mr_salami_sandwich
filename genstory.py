@@ -6,6 +6,14 @@ import openai
 import argparse
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
+if openai.api_key is None or len(openai.api_key) == 0:
+    keypath = os.path.join(os.getcwd(), "key.sh")
+    print(f"Key not found in ENV, looking for {keypath}")
+    with open(keypath, 'r') as f:
+        kvar = f.read().split('=')[1].strip().replace("\"","")
+        openai.api_key = kvar
+    
+
 settings = toml.load("settings.toml")["settings"]
 print(f"Using settings {settings}")
 
