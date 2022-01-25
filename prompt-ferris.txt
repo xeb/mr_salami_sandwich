@@ -1,0 +1,6 @@
+[narrator]: Once upon a time, there once was a sandwich named Mr. Salami Sandwich. He was made from two pieces of sourdough bread and had salami in the middle of his body.
+[mss]: Today I get to go to the fair. 
+[narrator]: Mr. Salami Sandwich went to the county fair. He saw a giant rollercoaster wheel that he wanted to ride.
+[male2]: That will be 2 tickets.
+[mss]: Here you go. I would like to ride the Red and Orange car.
+[male2]: Ok. But that is the fastest car we have!

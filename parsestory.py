@@ -25,7 +25,7 @@ def get_voice(speaker):
         voice = characters[speaker]["voice"]
 
         
-p = r'\[(.*)\].*"(.*)".*' # expected dialog
+p = r'\[(.*)\]:?(.*)' # expected dialog
 p2 = r'\[(.*)\](.*)' # backup
 
 i = 0
@@ -35,6 +35,7 @@ sm = {}
 
 for l in s.split('\n'):
     l = l.strip()
+    l = l.replace("\"","")
     i = i + 1
     print("---")
     print(f"Parsing line {l}")

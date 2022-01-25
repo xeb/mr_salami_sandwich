@@ -10,7 +10,7 @@ clean:
 	rm -f wav/final.mp3
 
 story:
-	python genstory.py --input_path=prompt-activity.txt --output_path=output.txt
+	python genstory.py --output_path=output.txt
 
 parse:
 	python parsestory.py --input_path=output.txt --output_path=dialogs.toml
@@ -26,4 +26,4 @@ copy:
 	mv final.mp3 wav/
 
 publish: clean story parse render merge copy
-audio: parse render merge copy
+audio: clean parse render merge copy

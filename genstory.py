@@ -20,7 +20,6 @@ print(f"Using settings {settings}")
 DIALOG_PATTERN = r'\[.*\].*'
 
 parser = argparse.ArgumentParser(description="Generate a Mr. Salami Sandwich Story")
-parser.add_argument('--input_path', '-i', required=True)
 parser.add_argument('--output_path', '-o', required=True)
 args = parser.parse_args()
 
@@ -84,8 +83,10 @@ def cleanse(output):
     return o
 
 # Main----
+input_path = settings["prompt"]
+
 prompt = ""
-with open(args.input_path,"r") as f:
+with open(input_path,"r") as f:
     prompt = f.read()
 
 if settings["input"] is not None:

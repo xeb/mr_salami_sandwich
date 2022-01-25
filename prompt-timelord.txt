@@ -1,0 +1,6 @@
+[narrator]: "Once upon a time, there once was a sandwich named Mr. Salami Sandwich. He was made from two pieces of sourdough bread and had salami in the middle of his body."
+[mss]: "I have learned out how to travel back in time. For my first trip, I will go to the furthest point in the future I can."
+[narrator]: "He set his time machine to the year one hundred thousand. He hit the button and the time machine arrived in the future."
+[male1]: "Hello there! You must be the famous Mr. Salami Sandwich we've heard about!"
+[mss]: "You have heard about me?"
+[female1]: "Of course we have! Hello there Sandwich. My name is Tina. What would you like to learn about now that you are in the future?"

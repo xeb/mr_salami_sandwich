@@ -1,15 +1,16 @@
 
 [settings]
-temperature = 0.6
-presence_penalty = 0.4
-frequency_penalty = 0.7
-reruns = 3
+temperature = 0.57
+presence_penalty = 0.5
+frequency_penalty = 0.5
+reruns = 0
 rerun_lines = 7
 max_retries = 2
 max_tokens = 2048
 
-input = "play basketball in the NBA"
-output = "basketball"
+input = "learn Kung Fu"
+prompt = "prompt-covid.txt"
+output = "covid.mp3"
 
 prompts_path = "prompts"
 
@@ -60,6 +61,9 @@ voice = "Russell"
 [characters.male3]
 voice = "Matthew"
 
+[characters.son]
+voice = "Justin"
+
 [characters.male4]
 voice = "Geraint"
 ssml = "<speak><prosody amazon:max-duration=\"60s\" pitch=\"-2000%\" rate=\"slow\">{TEXT}</prosody></speak>"
@@ -68,6 +72,9 @@ ssml = "<speak><prosody amazon:max-duration=\"60s\" pitch=\"-2000%\" rate=\"slow
 voice = "Joanna"
 
 [characters.female1]
+voice = "Joanna"
+
+[characters.feefee]
 voice = "Joanna"
 
 [characters.female2]

@@ -1,0 +1,7 @@
+[narrator]: "Once upon a time, there once was a sandwich named Mr. Salami Sandwich. He was made from two pieces of sourdough bread and had salami in the middle of his body."
+[mss]: "I have been summoned to the King's castle to appear before the King and Queen."
+[narrator]: "He set off towards the Castle on horseback. He liked weird because he was a sandwich riding a horse."
+[male1]: "Halt! Who goes there?"
+[mss]: "My name is Mr. Salami Sandwich and the King summoned me."
+[female1]: "Let him pass, Guard."
+[narrator]: "said the Queen."
