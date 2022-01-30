@@ -1,6 +1,6 @@
 
 [settings]
-temperature = 0.57
+temperature = 0.67
 presence_penalty = 0.5
 frequency_penalty = 0.5
 reruns = 0
@@ -8,9 +8,9 @@ rerun_lines = 7
 max_retries = 2
 max_tokens = 2048
 
-input = "learn Kung Fu"
-prompt = "prompt-covid.txt"
-output = "covid.mp3"
+input = "cancer"
+prompt = "prompt-cancer.txt"
+output = "cancer.mp3"
 
 prompts_path = "prompts"
 

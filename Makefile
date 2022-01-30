@@ -22,8 +22,8 @@ render:
 merge:
 	python merge.py --input_path=tmp --output_path=final.mp3
 
-copy:
-	mv final.mp3 wav/
+move:
+	./move.sh
 
-publish: clean story parse render merge copy
-audio: clean parse render merge copy
+publish: clean story parse render merge move
+audio: clean parse render merge move

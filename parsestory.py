@@ -5,12 +5,12 @@ import random
 import subprocess as sp
 
 parser = argparse.ArgumentParser(description="Parse a story to create dialog objects")
-parser.add_argument('--input_path', '-i', required=True)
-parser.add_argument('--output_path', '-o', required=True)
+parser.add_argument("--input_path", "-i", required=True)
+parser.add_argument("--output_path", "-o", required=True)
 args = parser.parse_args()
 
 s = ""
-with open(args.input_path,"r") as f:
+with open(args.input_path, "r") as f:
     s = f.read()
 
 s = s.replace("[", "\n[")
@@ -20,36 +20,39 @@ s = s.replace("\xa0", "")
 
 characters = toml.load("settings.toml")["characters"]
 
+
 def get_voice(speaker):
     if speaker in characters.keys():
         voice = characters[speaker]["voice"]
 
-        
-p = r'\[(.*)\]:?(.*)' # expected dialog
-p2 = r'\[(.*)\](.*)' # backup
+
+p = r"\[(.*)\]:?(.*)"  # expected dialog
+p2 = r"\[(.*)\](.*)"  # backup
 
 i = 0
 
 dialogs = []
 sm = {}
 
-for l in s.split('\n'):
+for l in s.split("\n"):
     l = l.strip()
-    l = l.replace("\"","")
+    l = l.replace('"', "")
     i = i + 1
     print("---")
     print(f"Parsing line {l}")
-    
-    voice = characters["unknown"]["voice"] # use unknown for standard looking dialogs
+
+    voice = characters["unknown"]["voice"]  # use unknown for standard looking dialogs
     voice = None
     dialog = None
 
     s = re.search(p, l)
     if s is None:
-        
+
         print("BACKUP DIALOG")
         s = re.search(p2, l)
-        voice = characters["narrator"]["voice"] # use narrator as backup for weird lines
+        voice = characters["narrator"][
+            "voice"
+        ]  # use narrator as backup for weird lines
 
         # Magic strings
         if l.strip() == "<|endoftext|>":
@@ -57,7 +60,7 @@ for l in s.split('\n'):
             continue
 
         if len(l) > 10:
-            dialog = l # just make the whole line a narration
+            dialog = l  # just make the whole line a narration
 
     # Parse standard
     if s is not None:
@@ -89,7 +92,7 @@ for l in s.split('\n'):
     if dialog is None or len(dialog.strip()) == 0:
         continue
 
-    ofile=f"out{i:03}"
+    ofile = f"out{i:03}"
 
     if voice is None:
         print(f"OMFG, what?")
@@ -108,4 +111,3 @@ with open(args.output_path, "w") as f:
     data = toml.dumps({"dialogs": dialogs})
     f.write(data)
     print(f"Wrote to {args.output_path}")
-

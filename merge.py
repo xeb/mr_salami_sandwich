@@ -2,8 +2,8 @@ import os, sys
 import argparse
 
 parser = argparse.ArgumentParser(description="Parse a story to create dialog objects")
-parser.add_argument('--input_path', '-i', required=True)
-parser.add_argument('--output_path', '-o', required=True)
+parser.add_argument("--input_path", "-i", required=True)
+parser.add_argument("--output_path", "-o", required=True)
 args = parser.parse_args()
 
 cmd = 'ffmpeg -i "concat:'
