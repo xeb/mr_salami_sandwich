@@ -1,6 +1,0 @@
-[narrator]: "Once upon a time, there once was a sandwich named Mr. Salami Sandwich. He was made from two pieces of sourdough bread and had salami in the middle of his body."
-[mss]: "Today is the first time I've ever tried to {INPUT}."
-[male1]: "Hi there, Mr. Salami Sandwich. My name is Kim. Did I hear that right? Is this the first time you are going to try to {INPUT}?"
-[mss]: "Yes, that is right."
-[male1]: "I will train you to {INPUT}"
-[narrator]: "Kim and Mr. Salami Sandwich went to {INPUT}."

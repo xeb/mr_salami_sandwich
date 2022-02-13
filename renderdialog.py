@@ -1,5 +1,6 @@
 import re, os
 import toml
+from tqdm import tqdm
 import subprocess as sp
 import argparse
 
@@ -33,8 +34,8 @@ def render_polly(voice="Brian", text="Test", output="o.wav"):
     print(f"Rendered polly. {stdout} {stderr}")
 
 
-for dialog in dialogs:
-    print(f"Rendering {dialog}")
+for dialog in tqdm(dialogs):
+    #print(f"Rendering {dialog}")
     render_polly(voice=dialog["voice"], text=dialog["text"], output=dialog["output"])
 
 print("Done")

@@ -33,7 +33,8 @@ def complete(prompt, test=False):
         return '[mss]: "auto1"\n[tkt]: "auto2"'
 
     response = openai.Completion.create(
-        engine="text-davinci-001",
+#        engine="text-davinci-001",
+        engine="davinci",
         prompt=prompt,
         temperature=settings["temperature"],
         max_tokens=(settings["max_tokens"] - len(prompt)),
@@ -87,7 +88,6 @@ def cleanse(output):
 
 # Main----
 input_path = settings["prompt"]
-
 prompt = ""
 with open(input_path, "r") as f:
     prompt = f.read()
@@ -98,7 +98,7 @@ if settings["input"] is not None:
 print(f"Using prompt {prompt}")
 text = complete_valid(prompt)
 story = cleanse(prompt.strip() + "\n" + text.strip())
-print(story)
+print(f"====\n{story}")
 
 if settings["reruns"] > 0:
     for rr in range(0, settings["reruns"]):
@@ -124,6 +124,6 @@ with open(args.output_path, "w") as f:
         if re.search(DIALOG_PATTERN, l):
             f.write(f"{l}\n")
         else:
-            print(f"Skipping line {l}")
+            print(f"Skipping line: {l}")
 
 print(f"----\nSaved to {args.output_path}")

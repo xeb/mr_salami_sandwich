@@ -1,16 +1,15 @@
-
 [settings]
-temperature = 0.67
-presence_penalty = 0.5
-frequency_penalty = 0.5
-reruns = 0
+temperature = 0.69
+presence_penalty = 0.35
+frequency_penalty = 0.65
+reruns = 1
 rerun_lines = 7
 max_retries = 2
 max_tokens = 2048
 
-input = "cancer"
-prompt = "prompt-cancer.txt"
-output = "cancer.mp3"
+input = "going to the aquarium"
+prompt = "prompts/nephew-bday.txt"
+output = "nephew-bday-3.mp3"
 
 prompts_path = "prompts"
 
@@ -45,6 +44,9 @@ output = "programmer.mp3"
 [characters]
 
 [characters.narrator]
+voice = "Brian"
+
+[characters.Narrator]
 voice = "Brian"
 
 [characters.mss]
