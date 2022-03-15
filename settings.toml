@@ -1,45 +1,17 @@
 [settings]
 temperature = 0.69
-presence_penalty = 0.35
+presence_penalty = 0.45
 frequency_penalty = 0.65
 reruns = 1
 rerun_lines = 7
 max_retries = 2
 max_tokens = 2048
 
-input = "going to the aquarium"
-prompt = "prompts/nephew-bday.txt"
-output = "nephew-bday-3.mp3"
-
-prompts_path = "prompts"
+input = ""
+prompt = "prompts/funny.txt"
+output = "funny-1.mp3"
 
 # ------------------------------------------------
-
-[runs]
-
-[runs.1]
-
-input = "play soccer"
-prompt = "activity"
-output = "soccer1.mp3"
-
-[runs.2]
-
-input = "play football"
-prompt = "activity"
-output = "football1.mp3"
-
-[runs.3]
-input = "Big Bear Lake"
-prompt = "location"
-output = "bigbear.mp3"
-
-[runs.4]
-input = "Programmer"
-prompt = "job"
-output = "programmer.mp3"
-
-# -------------------------------------------------
 
 [characters]
 
@@ -52,6 +24,12 @@ voice = "Brian"
 [characters.mss]
 voice = "Geraint"
 ssml = "<speak><prosody amazon:max-duration=\"60s\" pitch=\"+2000%\" rate=\"x-fast\">{TEXT}</prosody></speak>"
+
+[characters."Uncle Cheeseburger"]
+voice = "Matthew"
+
+[characters.man1]
+voice = "Matthew"
 
 [characters.male1]
 voice = "Matthew"
