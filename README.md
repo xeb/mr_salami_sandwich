@@ -7,7 +7,7 @@ This is a story generation codebase that takes an input prompt and creates audio
 This is all a big hack right now... nothing to see yet. This repository uses OpenAI and AWS services right now. Maybe one day I'll use EleutherAI's GPT-J and Coqui's TTS so it all runs locally; however, OpenAI and AWS run pretty quickly. Feel free to submit a PR if folks want to add that support (as an option in `settings.toml`).
 
 ### Step 1 - Account Setup
-(a) Sign-up (if you haven't already) to [https://openai.com/api/ OpenAI]
+(a) Sign-up (if you haven't already) to [Open AI](https://openai.com/api/)
 (b) Ensure the `aws` CLI is in your path and you have IAM permissions for Polly. (I'm just executing shell commands here, no boto3 dependency)
 
 ### Step 2 - Setup the key & run make!
