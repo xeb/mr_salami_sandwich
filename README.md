@@ -5,6 +5,9 @@ Once upon a time, there once was a sandwich named Mr. Salami Sandwich. He was ma
 
 This is a story generation codebase that takes an input prompt and creates audio dialogs as an MP3 file of the characters from the story.
 
+## Examples
+I generated a few "bedtime" stories for my kids using this codebase. You can listen to [samples of generated stories](https://gal.xeb.ai/wav/).
+
 ## Notes
 This is all a big hack right now... nothing to see yet. This repository uses OpenAI and AWS services right now. Maybe one day I'll use EleutherAI's GPT-J and Coqui's TTS so it all runs locally; however, OpenAI and AWS run pretty quickly. Feel free to submit a PR if folks want to add that support (as an option in `settings.toml`).
 

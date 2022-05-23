@@ -2,14 +2,14 @@
 temperature = 0.69
 presence_penalty = 0.45
 frequency_penalty = 0.65
-reruns = 1
+reruns = 0
 rerun_lines = 7
 max_retries = 2
 max_tokens = 2048
 
 input = ""
-prompt = "prompts/funny.txt"
-output = "funny-1.mp3"
+prompt = "prompts/eldenring.txt"
+output = "eldenring-1.mp3"
 
 # ------------------------------------------------
 
